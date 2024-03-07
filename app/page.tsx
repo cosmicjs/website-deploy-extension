@@ -18,8 +18,8 @@ export default async function IndexPage({
     searchParams.write_key
   )
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10 p-4">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
+    <section className="container p-4">
+      <div className="flex">
         <TriggerDeploy deploy_url={searchParams.deploy_url} />
       </div>
     </section>
