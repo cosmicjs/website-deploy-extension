@@ -18,7 +18,29 @@ export async function InstallationSteps() {
   return (
     <div className="py-10">
       <h2 className="mb-6 text-3xl">Installation Guide</h2>
-      <Markdown className="m-auto max-w-[800px] space-y-4 text-zinc-700 dark:text-zinc-300">
+      <Markdown
+        className="m-auto max-w-[800px] space-y-4 text-zinc-700 dark:text-zinc-300"
+        components={{
+          a: (a: { href: string; children: string }) => {
+            return a.href.charAt(0) === "#" ? (
+              <a href={a.href}>{a.children}</a>
+            ) : (
+              <a
+                href={a.href}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="text-cosmic-blue"
+              >
+                {a.children}
+              </a>
+            )
+          },
+          img: (image: { src: string; alt: string }) => {
+            // eslint-disable-next-line jsx-a11y/alt-text, @next/next/no-img-element
+            return <img loading="lazy" src={image.src} alt={image.alt} />
+          },
+        }}
+      >
         {object.metadata.installation_guide}
       </Markdown>
     </div>
