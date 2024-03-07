@@ -18,7 +18,7 @@ export default async function IndexPage({
     searchParams.write_key
   )
   return (
-    <section className="container p-4">
+    <section className="container py-4">
       <div className="flex">
         <TriggerDeploy deploy_url={searchParams.deploy_url} />
       </div>
