@@ -25,7 +25,7 @@ export function TriggerDeploy({ deploy_url }: { deploy_url: string }) {
       setTriggered(false)
     }, 2000)
     return (
-      <div className="flex">
+      <div className="flex pt-2">
         <CheckCircle2Icon className="w-6 h-6 text-green-500 mr-2" />
         Deployment started
       </div>
@@ -36,7 +36,7 @@ export function TriggerDeploy({ deploy_url }: { deploy_url: string }) {
       "Something went wrong. Make sure you have the set the deploy_url correctly in the extension settings."
     )
     return (
-      <div className="flex">
+      <div className="flex pt-2">
         <XCircleIcon className="w-6 h-6 text-red-500 mr-2" />
         Something went wrong.
       </div>
