@@ -13,8 +13,8 @@
   ol {
     list-style: decimal;
     margin: 0 40px;
-    li {
-     margin-bottom: 10px 
-    }
   }
+  ol li {
+    margin-bottom: 10px 
+   }
 }
