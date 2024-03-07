@@ -12,7 +12,7 @@ export default async function IndexPage({
   }
 }) {
   return (
-    <section className="w-full py-2">
+    <section className="w-full">
       <TriggerDeploy deploy_url={searchParams.deploy_url} />
     </section>
   )
