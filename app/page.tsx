@@ -1,3 +1,4 @@
+import { InstallationSteps } from "@/components/InstallationSteps"
 import { TriggerDeploy } from "@/components/TriggerDeploy"
 
 export default async function IndexPage({
@@ -13,7 +14,11 @@ export default async function IndexPage({
 }) {
   return (
     <section className="w-full">
-      <TriggerDeploy deploy_url={searchParams.deploy_url} />
+      {searchParams.deploy_url ? (
+        <TriggerDeploy deploy_url={searchParams.deploy_url} />
+      ) : (
+        <InstallationSteps />
+      )}
     </section>
   )
 }
