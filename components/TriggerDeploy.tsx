@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { CheckCircle2Icon, CrossIcon, Loader2 } from "lucide-react"
+import { CheckCircle2Icon, Loader2, XCircleIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
@@ -20,21 +20,28 @@ export function TriggerDeploy({ deploy_url }: { deploy_url: string }) {
     }
     setSubmitting(false)
   }
-  if (triggered)
+  if (triggered) {
+    setTimeout(() => {
+      setError(false)
+    }, 2000)
     return (
       <div className="flex">
         <CheckCircle2Icon className="w-6 h-6 text-green-500 mr-2" />
         Deployment started
       </div>
     )
-  if (error)
+  }
+  if (error) {
+    alert(
+      "Something went wrong. Make sure you have the set the deploy_url correctly in the extension settings."
+    )
     return (
       <div className="flex">
-        <CrossIcon className="w-6 h-6 text-red-500 mr-2" />
-        Something went wrong. Make sure you have the set the deploy_url
-        correctly in the extension settings.
+        <XCircleIcon className="w-6 h-6 text-red-500 mr-2" />
+        Something went wrong.
       </div>
     )
+  }
   return (
     <Button
       disabled={submitting}
