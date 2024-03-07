@@ -1,5 +1,5 @@
-import { InstallationSteps } from "@/components/InstallationSteps"
 import { TriggerDeploy } from "@/components/TriggerDeploy"
+import { InstallationSteps } from "@/app/InstallationSteps"
 
 export default async function IndexPage({
   searchParams,
