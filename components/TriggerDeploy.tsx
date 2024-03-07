@@ -22,7 +22,7 @@ export function TriggerDeploy({ deploy_url }: { deploy_url: string }) {
   }
   if (triggered) {
     setTimeout(() => {
-      setError(false)
+      setTriggered(false)
     }, 2000)
     return (
       <div className="flex">
