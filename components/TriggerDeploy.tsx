@@ -47,6 +47,7 @@ export function TriggerDeploy({ deploy_url }: { deploy_url: string }) {
       disabled={submitting}
       onClick={() => handleTriggerDeployClicked(deploy_url)}
       className="w-screen"
+      variant="secondary"
     >
       {submitting ? (
         <Loader2 className="h-4 w-4 animate-spin" />
