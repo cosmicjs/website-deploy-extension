@@ -1,4 +1,3 @@
-import { cosmicBucketConfig } from "@/lib/cosmic"
 import { TriggerDeploy } from "@/components/TriggerDeploy"
 
 export default async function IndexPage({
@@ -13,10 +12,8 @@ export default async function IndexPage({
   }
 }) {
   return (
-    <section className="container py-4">
-      <div className="flex">
-        <TriggerDeploy deploy_url={searchParams.deploy_url} />
-      </div>
+    <section className="w-full py-2">
+      <TriggerDeploy deploy_url={searchParams.deploy_url} />
     </section>
   )
 }
