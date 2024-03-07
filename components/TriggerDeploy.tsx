@@ -38,7 +38,7 @@ export function TriggerDeploy({ deploy_url }: { deploy_url: string }) {
     return (
       <div className="flex pt-2">
         <XCircleIcon className="mr-2 size-6 text-red-500" />
-        Something went wrong.
+        Deployment failed
       </div>
     )
   }
