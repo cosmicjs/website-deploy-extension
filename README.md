@@ -1,25 +1,19 @@
-# Cosmic Next Template
+# Vercel Deploy Extension
 
-Beautifully designed template built with Next.js, Shadcn UI, Tailwind CSS. Use it as a starter for your Cosmic websites and apps. Use it as a [Cosmic extension](https://www.cosmicjs.com/docs/dashboard/buckets#extensions) starter.
+Adds a button to your edit Object page that enables you to deploy your Vercel project in a single click.
+
+![Image](https://imgix.cosmicjs.com/d06ec920-dca5-11ee-b074-b5c8fe3ef189-trigger-deploy.png?w=1800&auto=format,compression)
 
 ## Usage
 
+Go to the [Vercel Deploy Extension](https://www.cosmicjs.com/marketplace/extensions/deploy-to-vercel) on Cosmic to add this Extension to your Project.
+
+## Contribution
+Contributions welcome!
+
 ```bash
-git clone https://github.com/cosmicjs/cosmic-next-template
-cd cosmic-next-template
-yarn
-yarn dev
+git clone https://github.com/cosmicjs/vercel-deploy-extension
+cd vercel-deploy-extension
+bun
+bun dev
 ```
-
-## Features
-
-- Next.js 13 App Directory
-- Radix UI Primitives
-- Tailwind CSS
-- Icons from [Lucide](https://lucide.dev)
-- Dark mode with `next-themes`
-- Tailwind CSS class sorting, merging and linting.
-
-## License
-
-Licensed under the [MIT license](https://github.com/cosmicjs/cosmic-next-template/blob/main/LICENSE.md).
