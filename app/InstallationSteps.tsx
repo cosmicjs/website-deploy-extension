@@ -1,3 +1,4 @@
+import { AnchorHTMLAttributes, ImgHTMLAttributes } from "react"
 import { createBucketClient } from "@cosmicjs/sdk"
 import Markdown from "react-markdown"
 
@@ -21,10 +22,8 @@ export async function InstallationSteps() {
       <Markdown
         className="m-auto max-w-[800px] space-y-4 text-zinc-700 dark:text-zinc-300"
         components={{
-          a: (a: { href: string; children: string }) => {
-            return a.href.charAt(0) === "#" ? (
-              <a href={a.href}>{a.children}</a>
-            ) : (
+          a: (a: AnchorHTMLAttributes<HTMLAnchorElement>) => {
+            return (
               <a
                 href={a.href}
                 rel="noopener noreferrer"
@@ -35,7 +34,7 @@ export async function InstallationSteps() {
               </a>
             )
           },
-          img: (image: { src: string; alt: string }) => {
+          img: (image: ImgHTMLAttributes<HTMLImageElement>) => {
             // eslint-disable-next-line jsx-a11y/alt-text, @next/next/no-img-element
             return <img loading="lazy" src={image.src} alt={image.alt} />
           },
