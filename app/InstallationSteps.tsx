@@ -16,8 +16,11 @@ export async function InstallationSteps() {
     .status("any")
     .depth(1)
   return (
-    <Markdown className="space-y-4 text-zinc-700 dark:text-zinc-300">
-      {object.metadata.installation_guide}
-    </Markdown>
+    <div className="py-10">
+      <h2 className="mb-6 text-3xl">Installation Guide</h2>
+      <Markdown className="m-auto max-w-[800px] space-y-4 text-zinc-700 dark:text-zinc-300">
+        {object.metadata.installation_guide}
+      </Markdown>
+    </div>
   )
 }
