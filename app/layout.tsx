@@ -1,4 +1,5 @@
 import "@/styles/globals.css"
+import { Suspense } from "react"
 import { Metadata } from "next"
 
 import { siteConfig } from "@/config/site"
@@ -40,13 +41,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="relative flex min-h-screen flex-col">
-              <div className="flex-1">{children}</div>
-            </div>
-            <TailwindIndicator />
-            <ThemeToggle />
-          </ThemeProvider>
+          <Suspense>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <div className="relative flex min-h-screen flex-col">
+                <div className="flex-1">{children}</div>
+              </div>
+              <TailwindIndicator />
+              <ThemeToggle />
+            </ThemeProvider>
+          </Suspense>
         </body>
       </html>
     </>

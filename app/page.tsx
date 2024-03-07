@@ -12,11 +12,6 @@ export default async function IndexPage({
     deploy_url: string
   }
 }) {
-  const cosmic = cosmicBucketConfig(
-    searchParams.bucket_slug,
-    searchParams.read_key,
-    searchParams.write_key
-  )
   return (
     <section className="container py-4">
       <div className="flex">
