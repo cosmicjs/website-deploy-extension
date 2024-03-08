@@ -10,7 +10,6 @@ export function TriggerDeploy({ deploy_url }: { deploy_url: string }) {
   const [triggered, setTriggered] = useState(false)
   const [error, setError] = useState(false)
   async function handleTriggerDeployClicked(deploy_url: string) {
-    // alert(deploy_url)
     setSubmitting(true)
     try {
       await fetch(deploy_url)

@@ -8,13 +8,13 @@ export default async function IndexPage({
     bucket_slug: string
     read_key: string
     write_key: string
-    location: string
+    page: string
     deploy_url: string
   }
 }) {
   return (
     <section className="w-full">
-      {searchParams.deploy_url ? (
+      {searchParams.page === "edit-object" ? (
         <TriggerDeploy deploy_url={searchParams.deploy_url} />
       ) : (
         <InstallationSteps />
