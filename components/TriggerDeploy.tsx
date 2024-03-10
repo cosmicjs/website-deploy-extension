@@ -12,10 +12,18 @@ export function TriggerDeploy({ deploy_url }: { deploy_url: string }) {
   async function handleTriggerDeployClicked(deploy_url: string) {
     setSubmitting(true)
     try {
-      await fetch(deploy_url)
-      setTriggered(true)
+      const data = await fetch(`/api/deploy`, {
+        method: "POST",
+        body: JSON.stringify({ deploy_url }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      if (data.status === 200) setTriggered(true)
+      else setError(true)
     } catch (err) {
       setError(true)
+      console.log(err)
     }
     setSubmitting(false)
   }
