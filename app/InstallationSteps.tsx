@@ -7,11 +7,11 @@ const cosmic = createBucketClient({
   readKey: process.env.COSMIC_BUCKET_READ_KEY || "",
 })
 
-export async function InstallationSteps() {
+export async function InstallationSteps({ service }: { service: string }) {
   const { object } = await cosmic.objects
     .findOne({
       type: "extensions",
-      slug: "deploy-to-render",
+      slug: `deploy-to-${service}`,
     })
     .props("slug,title,metadata")
     .status("any")

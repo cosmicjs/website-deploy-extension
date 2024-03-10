@@ -10,6 +10,7 @@ export default async function IndexPage({
     write_key: string
     page: string
     deploy_url: string
+    service: string
   }
 }) {
   return (
@@ -17,7 +18,7 @@ export default async function IndexPage({
       {searchParams.page === "edit-object" ? (
         <TriggerDeploy deploy_url={searchParams.deploy_url} />
       ) : (
-        <InstallationSteps />
+        <InstallationSteps service={searchParams.service} />
       )}
     </section>
   )
