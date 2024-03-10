@@ -1,25 +1,21 @@
-import { TriggerDeploy } from "@/components/TriggerDeploy"
-import { InstallationSteps } from "@/app/InstallationSteps"
+import Link from "next/link"
 
-export default async function IndexPage({
-  searchParams,
-}: {
-  searchParams: {
-    bucket_slug: string
-    read_key: string
-    write_key: string
-    page: string
-    deploy_url: string
-    service: string
-  }
-}) {
+export default async function IndexPage() {
   return (
     <section className="w-full">
-      {searchParams.page === "edit-object" ? (
-        <TriggerDeploy deploy_url={searchParams.deploy_url} />
-      ) : (
-        <InstallationSteps service={searchParams.service} />
-      )}
+      Select from the following services:
+      <div>
+        <Link href="/vercel">Vercel</Link>
+      </div>
+      <div>
+        <Link href="/netlify">Netlify</Link>
+      </div>
+      <div>
+        <Link href="/render">Render</Link>
+      </div>
+      <div>
+        <Link href="/cloudflare">Cloudflare</Link>
+      </div>
     </section>
   )
 }
