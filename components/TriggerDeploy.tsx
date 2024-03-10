@@ -20,7 +20,10 @@ export function TriggerDeploy({ deploy_url }: { deploy_url: string }) {
         },
       })
       if (data.status === 200) setTriggered(true)
-      else setError(true)
+      else {
+        setError(true)
+        console.log(data)
+      }
     } catch (err) {
       setError(true)
       console.log(err)
