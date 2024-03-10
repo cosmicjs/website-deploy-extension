@@ -7,7 +7,11 @@ const cosmic = createBucketClient({
   readKey: process.env.COSMIC_BUCKET_READ_KEY || "",
 })
 
-export async function InstallationSteps({ service }: { service: string }) {
+export async function InstallationSteps({
+  service = "vercel",
+}: {
+  service: string
+}) {
   const { object } = await cosmic.objects
     .findOne({
       type: "extensions",
