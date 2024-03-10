@@ -11,7 +11,7 @@ export async function InstallationSteps() {
   const { object } = await cosmic.objects
     .findOne({
       type: "extensions",
-      slug: "deploy-to-vercel",
+      slug: "deploy-to-render",
     })
     .props("slug,title,metadata")
     .status("any")
