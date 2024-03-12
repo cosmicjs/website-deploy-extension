@@ -84,7 +84,7 @@ export function TriggerDeploy({
   return (
     <Button
       disabled={submitting}
-      onClick={() => handleTriggerDeployClicked(deploy_url)}
+      onClick={() => handleTriggerDeployClicked()}
       className="w-screen"
       variant="secondary"
     >
