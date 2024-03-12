@@ -18,3 +18,6 @@
     margin-bottom: 10px 
    }
 }
+.dark .custom-zoom [data-rmiz-modal-overlay='visible'] {
+  background-color: black;
+}
