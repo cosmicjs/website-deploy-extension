@@ -5,16 +5,45 @@ import { CheckCircle2Icon, Loader2, XCircleIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
-export function TriggerDeploy({ deploy_url }: { deploy_url: string }) {
+type TriggerDeploy = {
+  deploy_url: string
+  kinsta_app_id: string
+  kinsta_site_id: string
+  kinsta_token: string
+  branch: string
+}
+
+export function TriggerDeploy({
+  deploy_url,
+  kinsta_app_id,
+  kinsta_site_id,
+  kinsta_token,
+  branch,
+}: TriggerDeploy) {
   const [submitting, setSubmitting] = useState(false)
   const [triggered, setTriggered] = useState(false)
   const [error, setError] = useState(false)
-  async function handleTriggerDeployClicked(deploy_url: string) {
+  async function handleTriggerDeployClicked() {
     setSubmitting(true)
+    let body: any = {
+      deploy_url,
+    }
+    if (kinsta_token) {
+      body.kinsta_token = kinsta_token
+    }
+    if (kinsta_app_id) {
+      body.kinsta_app_id = kinsta_app_id
+    }
+    if (kinsta_site_id) {
+      body.static_site_id = kinsta_site_id
+    }
+    if (branch) {
+      body.branch = branch
+    }
     try {
       const data = await fetch(`/api/deploy`, {
         method: "POST",
-        body: JSON.stringify({ deploy_url }),
+        body: JSON.stringify(body),
         headers: {
           "Content-Type": "application/json",
         },

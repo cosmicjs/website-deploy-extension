@@ -16,6 +16,9 @@ export default async function IndexPage() {
       <div>
         <Link href="/cloudflare">Cloudflare</Link>
       </div>
+      <div>
+        <Link href="/kinsta">Kinsta</Link>
+      </div>
     </section>
   )
 }
