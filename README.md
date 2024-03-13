@@ -12,6 +12,7 @@ Install this extension in your Cosmic project for:
 - [Netlify Deploy Extension](https://www.cosmicjs.com/marketplace/extensions/deploy-to-netlify)
 - [Cloudflare Deploy Extension](https://www.cosmicjs.com/marketplace/extensions/deploy-to-cloudflare)
 - [Render Deploy Extension](https://www.cosmicjs.com/marketplace/extensions/deploy-to-render)
+- [Kinsta Deploy Extension](https://www.cosmicjs.com/marketplace/extensions/deploy-to-kinsta)
 
 ## Contribution
 
